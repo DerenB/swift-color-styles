@@ -12,7 +12,13 @@
   - Main File > Targets > ProjectName > Info
   - Delete line `Main storyboard file base name`
 
-# Set Up Views & Navigation
+# Set Up Views
+
+- Create a View Controller file for each Screen
+- New File > Cocoa Touch Class
+- Set Subclass to "UIViewController"
+
+# Set Up Navigation
 
 - Set up in the file `SceneDelegate.swift`
 - Navigation set up by creating a Tab Bar
