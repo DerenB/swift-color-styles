@@ -21,10 +21,49 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         
         window?.windowScene = windowScene
+        window?.rootViewController = createTabBar()
         
         /// Set Root View Controller
-        
         window?.makeKeyAndVisible()
+        configureNavigationBar()
+    }
+    
+    
+    /// Create Color VC
+    func createColorsVC() -> UINavigationController {
+        /// Create instance of VC
+        let colorsVC = ColorsVC()
+        
+        /// Set Icon string name
+        let iconImage = UIImage(systemName: "paintpalette.fill")
+        
+        /// Set Navigation Title
+        colorsVC.title = "Colors"
+        
+        /// Create the tab bar item
+        /// Tag is the appearance order left to right
+        colorsVC.tabBarItem = UITabBarItem(title: "Colors", image: iconImage, tag: 0)
+        
+        return UINavigationController(rootViewController: colorsVC)
+    }
+    
+    
+    /// Create Fonts VC
+    func createFontsVC() -> UINavigationController {
+        /// Create instance of VC
+        let fontsVC = FontsVC()
+        
+        /// Set Icon string name
+        let iconImage = UIImage(systemName: "f.circle.fill")
+        
+        /// Set Navigation Title
+        fontsVC.title = "Fonts"
+        
+        /// Create the tab bar item
+        /// Tag is the appearance order left to right
+        fontsVC.tabBarItem = UITabBarItem(title: "Fonts", image: iconImage, tag: 0)
+        
+        return UINavigationController(rootViewController: fontsVC)
     }
     
     
@@ -34,13 +73,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabBar = UITabBarController()
         
         /// Set the Tab Bar color
-        UITabBar.appearance().tintColor = .systemRed
+        UITabBar.appearance().tintColor = .white
+        
+        /// Set Tab Bar to solid black
+        UITabBar.appearance().isTranslucent = false
+        UITabBar.appearance().barTintColor = .black
         
         /// Add the Tabs to the Tab Bar
-        tabBar.viewControllers = []
+        tabBar.viewControllers = [createColorsVC(), createFontsVC()]
         
         return tabBar
     }
+    
+    
+    /// Customize Navigation Bar
+    func configureNavigationBar() {
+        UINavigationBar.appearance().tintColor = .systemCyan
+    }
+    
     
     
     func sceneDidDisconnect(_ scene: UIScene) {
