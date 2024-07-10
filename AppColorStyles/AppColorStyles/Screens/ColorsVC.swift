@@ -10,8 +10,12 @@ import UIKit
 class ColorsVC: UIViewController {
     
     /// Scroll Items
+    let scrollingAbility = ScrollingAbility()
     let scrollView = UIScrollView()
     let stackView = UIStackView()
+    
+    /// Color Block Function
+    let colorBlock = ColorBlock()
     
     /// Color Blocks
     let redBlock = UIView()
@@ -36,82 +40,32 @@ class ColorsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemGray
+        /// Background Color
+        view.backgroundColor = .black
         
-        createScrollFunction()
-        createStackFunction()
+        /// Add the ability to scroll the page
+        scrollingAbility.addScrolling(viewInput: view, scrollViewInput: scrollView, stackViewInput: stackView)
         
-        createColorBlocks()
-    }
-    
-    
-    /// Scrolling Function
-    func createScrollFunction() {
-        view.addSubview(scrollView)
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-            scrollView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            scrollView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-    }
-    
-    
-    /// Scroll Stack Function
-    func createStackFunction() {
-        scrollView.addSubview(stackView)
-        stackView.axis = .vertical
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            stackView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
-            stackView.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
-            stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
-        ])
+        /// Adds the color blocks
+        createBlocks()
     }
     
     
     /// Function for Creating all of the color blocks
-    func createColorBlocks() {
-        createColorBlock(viewBlock: redBlock, bgColor: .systemRed, heightPin: 10)
-        createColorBlock(viewBlock: orangeBlock, bgColor: .systemOrange, heightPin: 110)
-        createColorBlock(viewBlock: yellowBlock, bgColor: .systemYellow, heightPin: 210)
-        createColorBlock(viewBlock: greenBlock, bgColor: .systemGreen, heightPin: 310)
-        createColorBlock(viewBlock: mintBlock, bgColor: .systemMint, heightPin: 410)
-        createColorBlock(viewBlock: tealBlock, bgColor: .systemTeal, heightPin: 510)
-        createColorBlock(viewBlock: cyanBlock, bgColor: .systemCyan, heightPin: 610)
-        createColorBlock(viewBlock: blueBlock, bgColor: .systemBlue, heightPin: 710)
-        createColorBlock(viewBlock: indigoBlock, bgColor: .systemIndigo, heightPin: 810)
-        createColorBlock(viewBlock: purpleBlock, bgColor: .systemPurple, heightPin: 910)
-        createColorBlock(viewBlock: pinkBlock, bgColor: .systemPink, heightPin: 1010)
-        createColorBlock(viewBlock: brownBlock, bgColor: .systemBrown, heightPin: 1110)
-    }
-    
-    
-    /// Function for Creating a Color Block
-    /// Paramters:
-    ///     - View Variable : UIView
-    ///     - Background Color : UIColor
-    ///     - Y Anchor : CGFloat
-    func createColorBlock(viewBlock: UIView, bgColor: UIColor, heightPin: CGFloat) {
-        /// Add View to Canvas
-        stackView.addArrangedSubview(viewBlock)
-        
-        /// Remove auto layout
-        viewBlock.translatesAutoresizingMaskIntoConstraints = false
-        
-        /// Set background color
-        viewBlock.backgroundColor = bgColor
-        
-        /// Constraints
-        NSLayoutConstraint.activate([
-            viewBlock.widthAnchor.constraint(equalTo: stackView.widthAnchor),
-            viewBlock.heightAnchor.constraint(equalToConstant: 100),
-            viewBlock.centerXAnchor.constraint(equalTo: stackView.centerXAnchor),
-            viewBlock.topAnchor.constraint(equalTo: stackView.safeAreaLayoutGuide.topAnchor, constant: heightPin)
-        ])
+    /// Calls the CreateColorBlock function
+    func createBlocks() {
+        colorBlock.createColorBlock(viewBlock: redBlock, stackView: stackView,bgColor: .systemRed, heightPin: 10)
+        colorBlock.createColorBlock(viewBlock: orangeBlock, stackView: stackView,bgColor: .systemOrange, heightPin: 110)
+        colorBlock.createColorBlock(viewBlock: yellowBlock, stackView: stackView,bgColor: .systemYellow, heightPin: 210)
+        colorBlock.createColorBlock(viewBlock: greenBlock, stackView: stackView,bgColor: .systemGreen, heightPin: 310)
+        colorBlock.createColorBlock(viewBlock: mintBlock, stackView: stackView,bgColor: .systemMint, heightPin: 410)
+        colorBlock.createColorBlock(viewBlock: tealBlock, stackView: stackView,bgColor: .systemTeal, heightPin: 510)
+        colorBlock.createColorBlock(viewBlock: cyanBlock, stackView: stackView,bgColor: .systemCyan, heightPin: 610)
+        colorBlock.createColorBlock(viewBlock: blueBlock, stackView: stackView,bgColor: .systemBlue, heightPin: 710)
+        colorBlock.createColorBlock(viewBlock: indigoBlock, stackView: stackView,bgColor: .systemIndigo, heightPin: 810)
+        colorBlock.createColorBlock(viewBlock: purpleBlock, stackView: stackView,bgColor: .systemPurple, heightPin: 910)
+        colorBlock.createColorBlock(viewBlock: pinkBlock, stackView: stackView,bgColor: .systemPink, heightPin: 1010)
+        colorBlock.createColorBlock(viewBlock: brownBlock, stackView: stackView,bgColor: .systemBrown, heightPin: 1110)
     }
     
     
