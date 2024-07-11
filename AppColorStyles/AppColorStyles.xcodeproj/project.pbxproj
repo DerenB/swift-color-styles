@@ -19,6 +19,7 @@
 		159FCF162C3E258B00AB69A2 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FCF152C3E258B00AB69A2 /* ScrollView.swift */; };
 		159FCF1B2C3E2A3400AB69A2 /* ColorBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FCF1A2C3E2A3400AB69A2 /* ColorBlock.swift */; };
 		159FCF1D2C3E2AFD00AB69A2 /* ScrollingAbility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FCF1C2C3E2AFD00AB69A2 /* ScrollingAbility.swift */; };
+		15FC9BF62C3F5BE5009DC954 /* ColorSystemText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FC9BF52C3F5BE5009DC954 /* ColorSystemText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		159FCF152C3E258B00AB69A2 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		159FCF1A2C3E2A3400AB69A2 /* ColorBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBlock.swift; sourceTree = "<group>"; };
 		159FCF1C2C3E2AFD00AB69A2 /* ScrollingAbility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingAbility.swift; sourceTree = "<group>"; };
+		15FC9BF52C3F5BE5009DC954 /* ColorSystemText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSystemText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				159FCF1A2C3E2A3400AB69A2 /* ColorBlock.swift */,
+				15FC9BF52C3F5BE5009DC954 /* ColorSystemText.swift */,
 				159FCF1C2C3E2AFD00AB69A2 /* ScrollingAbility.swift */,
 			);
 			path = HelperFunctions;
@@ -195,6 +198,7 @@
 				159FCF1D2C3E2AFD00AB69A2 /* ScrollingAbility.swift in Sources */,
 				159FCF0B2C3CA74500AB69A2 /* ColorsVC.swift in Sources */,
 				159FCF1B2C3E2A3400AB69A2 /* ColorBlock.swift in Sources */,
+				15FC9BF62C3F5BE5009DC954 /* ColorSystemText.swift in Sources */,
 				150CD8A02C3B1BC8003CD14E /* SceneDelegate.swift in Sources */,
 				159FCF0D2C3CA7F300AB69A2 /* FontsVC.swift in Sources */,
 			);
