@@ -13,7 +13,7 @@ class ColorBlock {
     ///     - View Variable : UIView
     ///     - Background Color : UIColor
     ///     - Y Anchor : CGFloat
-    func createColorBlock(viewBlock: UIView, stackView: UIStackView, bgColor: UIColor, heightPin: CGFloat) {
+    func createColorBlock(viewBlock: UIView, stackView: UIStackView, bgColor: UIColor, heightPin: CGFloat, height: CGFloat) {
         /// Add View to Canvas
         stackView.addArrangedSubview(viewBlock)
         
@@ -26,7 +26,7 @@ class ColorBlock {
         /// Constraints
         NSLayoutConstraint.activate([
             viewBlock.widthAnchor.constraint(equalTo: stackView.widthAnchor),
-            viewBlock.heightAnchor.constraint(equalToConstant: 100),
+            viewBlock.heightAnchor.constraint(equalToConstant: height),
             viewBlock.centerXAnchor.constraint(equalTo: stackView.centerXAnchor),
             viewBlock.topAnchor.constraint(equalTo: stackView.safeAreaLayoutGuide.topAnchor, constant: heightPin)
         ])
