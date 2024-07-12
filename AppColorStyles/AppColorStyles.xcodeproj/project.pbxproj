@@ -19,6 +19,7 @@
 		159FCF162C3E258B00AB69A2 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FCF152C3E258B00AB69A2 /* ScrollView.swift */; };
 		159FCF1B2C3E2A3400AB69A2 /* ColorBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FCF1A2C3E2A3400AB69A2 /* ColorBlock.swift */; };
 		159FCF1D2C3E2AFD00AB69A2 /* ScrollingAbility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FCF1C2C3E2AFD00AB69A2 /* ScrollingAbility.swift */; };
+		15EB80EB2C40BE440010FC6B /* RgbColorValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EB80EA2C40BE440010FC6B /* RgbColorValues.swift */; };
 		15FC9BF62C3F5BE5009DC954 /* ColorSystemText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FC9BF52C3F5BE5009DC954 /* ColorSystemText.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,7 @@
 		159FCF152C3E258B00AB69A2 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		159FCF1A2C3E2A3400AB69A2 /* ColorBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBlock.swift; sourceTree = "<group>"; };
 		159FCF1C2C3E2AFD00AB69A2 /* ScrollingAbility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingAbility.swift; sourceTree = "<group>"; };
+		15EB80EA2C40BE440010FC6B /* RgbColorValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RgbColorValues.swift; sourceTree = "<group>"; };
 		15FC9BF52C3F5BE5009DC954 /* ColorSystemText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSystemText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,6 +117,7 @@
 			children = (
 				159FCF1A2C3E2A3400AB69A2 /* ColorBlock.swift */,
 				15FC9BF52C3F5BE5009DC954 /* ColorSystemText.swift */,
+				15EB80EA2C40BE440010FC6B /* RgbColorValues.swift */,
 				159FCF1C2C3E2AFD00AB69A2 /* ScrollingAbility.swift */,
 			);
 			path = HelperFunctions;
@@ -191,6 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15EB80EB2C40BE440010FC6B /* RgbColorValues.swift in Sources */,
 				159FCF142C3DBB6800AB69A2 /* ColorBlockView.swift in Sources */,
 				159FCF162C3E258B00AB69A2 /* ScrollView.swift in Sources */,
 				159FCF102C3CB0BA00AB69A2 /* TestVC.swift in Sources */,

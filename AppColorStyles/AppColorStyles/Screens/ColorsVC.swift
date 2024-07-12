@@ -39,64 +39,17 @@ class ColorsVC: UIViewController {
     /// System Colors Array
     let syColorStrings: [String] = [".systemRed",".systemOrange",".systemYellow",".systemGreen",".systemMint",".systemTeal",".systemCyan",".systemBlue",".systemIndigo",".systemPurple",".systemPink",".systemBrown", ".systemGray", ".systemGray2", ".systemGray3", ".systemGray4", ".systemGray5", ".systemGray6"]
     var syColorsLight: [UIColor] = []
-    let c: [CGFloat] = [255, 59, 48, 255, 149, 0, 255, 204, 0, 52, 199, 89, 0, 199, 190, 48, 176, 199, 50, 173, 230, 0, 122, 255, 88, 86, 214, 175, 82, 222, 255, 45, 85, 162, 132, 94, 255,255,255, 142, 142, 147, 174, 174, 178, 199, 199, 204, 209, 209, 214, 229, 229, 234, 242, 242, 247]
+    let c: [CGFloat] = [255, 59, 48, 255, 149, 0, 255, 204, 0, 52, 199, 89, 0, 199, 190, 48, 176, 199, 50, 173, 230, 0, 122, 255, 88, 86, 214, 175, 82, 222, 255, 45, 85, 162, 132, 94, 255, 255, 255, 142, 142, 147, 174, 174, 178, 199, 199, 204, 209, 209, 214, 229, 229, 234, 242, 242, 247]
     
+    
+    /// RGB Values Function
+    let rgbFunc = RgbColorValues()
     
     /// Create RGB Label Text Fields
-    let redR = UITextField()
-    let redG = UITextField()
-    let redB = UITextField()
-    let orangeR = UITextField()
-    let orangeG = UITextField()
-    let orangeB = UITextField()
-    let yellowR = UITextField()
-    let yellowG = UITextField()
-    let yellowB = UITextField()
-    let greenR = UITextField()
-    let greenG = UITextField()
-    let greenB = UITextField()
-    let mintR = UITextField()
-    let mintG = UITextField()
-    let mintB = UITextField()
-    let tealR = UITextField()
-    let tealG = UITextField()
-    let tealB = UITextField()
-    let cyanR = UITextField()
-    let cyanG = UITextField()
-    let cyanB = UITextField()
-    let blueR = UITextField()
-    let blueG = UITextField()
-    let blueB = UITextField()
-    let indigoR = UITextField()
-    let indigoG = UITextField()
-    let indigoB = UITextField()
-    let purpleR = UITextField()
-    let purpleG = UITextField()
-    let purpleB = UITextField()
-    let pinkR = UITextField()
-    let pinkG = UITextField()
-    let pinkB = UITextField()
-    let brownR = UITextField()
-    let brownG = UITextField()
-    let brownB = UITextField()
-    let gray1R = UITextField()
-    let gray1G = UITextField()
-    let gray1B = UITextField()
-    let gray2R = UITextField()
-    let gray2G = UITextField()
-    let gray2B = UITextField()
-    let gray3R = UITextField()
-    let gray3G = UITextField()
-    let gray3B = UITextField()
-    let gray4R = UITextField()
-    let gray4G = UITextField()
-    let gray4B = UITextField()
-    let gray5R = UITextField()
-    let gray5G = UITextField()
-    let gray5B = UITextField()
-    let gray6R = UITextField()
-    let gray6G = UITextField()
-    let gray6B = UITextField()
+    let redR = UITextField(), redG = UITextField(), redB = UITextField(), orangeR = UITextField(), orangeG = UITextField(), orangeB = UITextField(), yellowR = UITextField(), yellowG = UITextField(), yellowB = UITextField(), greenR = UITextField(), greenG = UITextField(), greenB = UITextField(), mintR = UITextField(), mintG = UITextField(), mintB = UITextField(), tealR = UITextField(), tealG = UITextField(), tealB = UITextField(), cyanR = UITextField(), cyanG = UITextField(), cyanB = UITextField(), blueR = UITextField(), blueG = UITextField(), blueB = UITextField(), indigoR = UITextField(), indigoG = UITextField(), indigoB = UITextField(), purpleR = UITextField(), purpleG = UITextField(), purpleB = UITextField(), pinkR = UITextField(), pinkG = UITextField(), pinkB = UITextField(), brownR = UITextField(), brownG = UITextField(), brownB = UITextField(), gray1R = UITextField(), gray1G = UITextField(), gray1B = UITextField(), gray2R = UITextField(), gray2G = UITextField(), gray2B = UITextField(), gray3R = UITextField(), gray3G = UITextField(), gray3B = UITextField(), gray4R = UITextField(), gray4G = UITextField(), gray4B = UITextField(), gray5R = UITextField(), gray5G = UITextField(), gray5B = UITextField(), gray6R = UITextField(), gray6G = UITextField(), gray6B = UITextField()
+    
+    /// Array for RGB Values
+    var rgbArray: [UITextField] = []
 
     
     /// View Did Load
@@ -117,6 +70,8 @@ class ColorsVC: UIViewController {
         
         /// Add Color text
         createColorText()
+        
+        addRGBTextValues()
     }
     
     
@@ -134,6 +89,11 @@ class ColorsVC: UIViewController {
         /// Add the text field to their arrays
         whiteTextArray.append(contentsOf: [redWhiteText, orangeWhiteText, yellowWhiteText, greenWhiteText, mintWhiteText, tealWhiteText, cyanWhiteText, blueWhiteText, indigoWhiteText, purpleWhiteText, pinkWhiteText, brownWhiteText, gray1WhiteText, gray2WhiteText, gray3WhiteText, gray4WhiteText, gray5WhiteText, gray6WhiteText])
         blackTextArray.append(contentsOf:   [redBlackText, orangeBlackText, yellowBlackText, greenBlackText, mintBlackText, tealBlackText, cyanBlackText, blueBlackText, indigoBlackText, purpleBlackText, pinkBlackText, brownBlackText, gray1BlackText, gray2BlackText, gray3BlackText, gray4BlackText, gray5BlackText, gray6BlackText])
+        
+        /// Add the RGB Text Fields to their array
+        rgbArray.append(contentsOf: [redR, redG, redB, orangeR, orangeG, orangeB, yellowR, yellowG, yellowB, greenR, greenG, greenB, mintR, mintG, mintB, tealR, tealG, tealB, cyanR, cyanG, cyanB, blueR, blueG, blueB, indigoR, indigoG, indigoB, purpleR, purpleG, purpleB, pinkR, pinkG, pinkB, brownR, brownG, brownB, gray1R, gray1G, gray1B, gray2R, gray2G, gray2B, gray3R, gray3G, gray3B, gray4R, gray4G, gray4B, gray5R, gray5G, gray5B, gray6R, gray6G, gray6B
+        ])
+        
     }
     
     
@@ -188,26 +148,40 @@ class ColorsVC: UIViewController {
     }
     
     
-    func addRedValue() {
-        stackView.addSubview(<#T##view: UIView##UIView#>)
-    }
-    
-    /*
-    func createBlackText(stackView: UIStackView, inTextField: UITextField, title: String, block: UIView) {
-        stackView.addSubview(inTextField)
-        inTextField.translatesAutoresizingMaskIntoConstraints = false
+    func addRGBTextValues() {
         
-        inTextField.text = title
-        inTextField.textColor = .black
+        /// Variables for incrementing the colors array
+        var redVal = 0
+        var greenVal = 1
+        var blueVal = 2
         
-        NSLayoutConstraint.activate([
-            inTextField.widthAnchor.constraint(equalToConstant: 200),
-            inTextField.heightAnchor.constraint(equalToConstant: 100),
-            inTextField.topAnchor.constraint(equalTo: block.topAnchor, constant: 30),
-            inTextField.leadingAnchor.constraint(equalTo: block.leadingAnchor, constant: 5)
-        ])
+        /// Variables for incrementing the gray colors array
+        var gRedVal = 39
+        var gGreenVal = 40
+        var gBlueVal = 41
+        
+        /// Adding the RGB values for the color blocks
+        for i in 0..<12 {
+            rgbFunc.addRedValue(stackView: stackView, colorBlock: colorBlockArray[i], inputField: rgbArray[redVal], intVal: Int(c[redVal]))
+            rgbFunc.addGreenValue(stackView: stackView, colorBlock: colorBlockArray[i], inputField: rgbArray[greenVal], intVal: Int(c[greenVal]))
+            rgbFunc.addBlueValue(stackView: stackView, colorBlock: colorBlockArray[i], inputField: rgbArray[blueVal], intVal: Int(c[blueVal]))
+            redVal += 3
+            greenVal += 3
+            blueVal += 3
+        }
+        
+        /// Adding the RGB values for the gray blocks
+        for i in 12..<18 {
+            rgbFunc.addRedValue(stackView: stackView, colorBlock: colorBlockArray[i+1], inputField: rgbArray[gRedVal-3], intVal: Int(c[gRedVal]))
+            rgbFunc.addGreenValue(stackView: stackView, colorBlock: colorBlockArray[i+1], inputField: rgbArray[gGreenVal-3], intVal: Int(c[gGreenVal]))
+            rgbFunc.addBlueValue(stackView: stackView, colorBlock: colorBlockArray[i+1], inputField: rgbArray[gBlueVal-3], intVal: Int(c[gBlueVal]))
+            gRedVal += 3
+            gGreenVal += 3
+            gBlueVal += 3
+        }
+        
     }
-     */
     
     
 }
+
