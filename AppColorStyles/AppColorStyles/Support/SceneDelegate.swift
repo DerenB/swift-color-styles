@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDelegate {
 
     var window: UIWindow?
 
@@ -49,7 +49,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         lightModeVC.tabBarItem = UITabBarItem(title: "Light Mode", image: iconImage, tag: 0)
         
         return UINavigationController(rootViewController: lightModeVC)
-        
     }
     
     
@@ -97,15 +96,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         /// Create the Tab Bar
         let tabBar = UITabBarController()
         
+        /// Add the Tabs to the Tab Bar
+        tabBar.viewControllers = [createLightModeVC(), createDarkModeVC(), createFontsVC()]
+        tabBar.delegate = self
+        
         /// Set the Tab Bar color
-        UITabBar.appearance().tintColor = .white
+        UITabBar.appearance().tintColor = .black
         
         /// Set Tab Bar to solid black
         UITabBar.appearance().isTranslucent = false
-        UITabBar.appearance().barTintColor = .black
-        
-        /// Add the Tabs to the Tab Bar
-        tabBar.viewControllers = [createLightModeVC(), createDarkModeVC(), createFontsVC()]
+        UITabBar.appearance().barTintColor = .white
         
         return tabBar
     }
@@ -114,11 +114,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     /// Customize Navigation Bar
     func configureNavigationBar() {
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().barTintColor = .black
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
     }
-    
-    
+
+
     
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
