@@ -33,22 +33,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     
-    /// Create Color VC
-    func createColorsVC() -> UINavigationController {
-        /// Create instance of VC
-        let colorsVC = ColorsVC()
+    /// Create Light Mode VC
+    func createLightModeVC() -> UINavigationController {
+        /// Create Instance of VC
+        let lightModeVC = LightModeVC()
         
         /// Set Icon string name
         let iconImage = UIImage(systemName: "paintpalette.fill")
         
         /// Set Navigation Title
-        colorsVC.title = "Colors"
+        lightModeVC.title = "Light Mode"
         
         /// Create the tab bar item
         /// Tag is the appearance order left to right
-        colorsVC.tabBarItem = UITabBarItem(title: "Colors", image: iconImage, tag: 0)
+        lightModeVC.tabBarItem = UITabBarItem(title: "Light Mode", image: iconImage, tag: 0)
         
-        return UINavigationController(rootViewController: colorsVC)
+        return UINavigationController(rootViewController: lightModeVC)
+        
     }
     
     
@@ -65,7 +66,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         /// Create the tab bar item
         /// Tag is the appearance order left to right
-        fontsVC.tabBarItem = UITabBarItem(title: "Fonts", image: iconImage, tag: 0)
+        fontsVC.tabBarItem = UITabBarItem(title: "Fonts", image: iconImage, tag: 1)
         
         return UINavigationController(rootViewController: fontsVC)
     }
@@ -84,7 +85,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UITabBar.appearance().barTintColor = .black
         
         /// Add the Tabs to the Tab Bar
-        tabBar.viewControllers = [createColorsVC(), createFontsVC()]
+        tabBar.viewControllers = [createLightModeVC(), createFontsVC()]
         
         return tabBar
     }
