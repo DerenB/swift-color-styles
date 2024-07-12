@@ -60,7 +60,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         /// Set Icon string name
         let iconImage = UIImage(systemName: "f.circle.fill")
         
-        /// Set Navigation Title
+        /// Set Navigation Titles
         fontsVC.title = "Fonts"
         
         /// Create the tab bar item
@@ -94,7 +94,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func configureNavigationBar() {
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().barTintColor = .black
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.cyan]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
     
     

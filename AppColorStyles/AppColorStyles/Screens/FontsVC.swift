@@ -20,6 +20,7 @@ class FontsVC: UIViewController {
         createScrollFunction()
     }
     
+    
     func createScrollFunction() {
         view.addSubview(scrollView)
         scrollView.translatesAutoresizingMaskIntoConstraints = false
