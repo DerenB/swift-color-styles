@@ -20,6 +20,7 @@
 		159FCF1B2C3E2A3400AB69A2 /* ColorBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FCF1A2C3E2A3400AB69A2 /* ColorBlock.swift */; };
 		159FCF1D2C3E2AFD00AB69A2 /* ScrollingAbility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159FCF1C2C3E2AFD00AB69A2 /* ScrollingAbility.swift */; };
 		15B850312C41C3B2006C5174 /* LightModeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B850302C41C3B2006C5174 /* LightModeVC.swift */; };
+		15B850332C41DF7F006C5174 /* DarkModeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15B850322C41DF7F006C5174 /* DarkModeVC.swift */; };
 		15EB80EB2C40BE440010FC6B /* RgbColorValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EB80EA2C40BE440010FC6B /* RgbColorValues.swift */; };
 		15FC9BF62C3F5BE5009DC954 /* ColorSystemText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15FC9BF52C3F5BE5009DC954 /* ColorSystemText.swift */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		159FCF1A2C3E2A3400AB69A2 /* ColorBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBlock.swift; sourceTree = "<group>"; };
 		159FCF1C2C3E2AFD00AB69A2 /* ScrollingAbility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingAbility.swift; sourceTree = "<group>"; };
 		15B850302C41C3B2006C5174 /* LightModeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightModeVC.swift; sourceTree = "<group>"; };
+		15B850322C41DF7F006C5174 /* DarkModeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeVC.swift; sourceTree = "<group>"; };
 		15EB80EA2C40BE440010FC6B /* RgbColorValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RgbColorValues.swift; sourceTree = "<group>"; };
 		15FC9BF52C3F5BE5009DC954 /* ColorSystemText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSystemText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				159FCF0A2C3CA74500AB69A2 /* ColorsVC.swift */,
+				15B850322C41DF7F006C5174 /* DarkModeVC.swift */,
 				159FCF0C2C3CA7F300AB69A2 /* FontsVC.swift */,
 				150CD8A82C3B1BC9003CD14E /* LaunchScreen.storyboard */,
 				15B850302C41C3B2006C5174 /* LightModeVC.swift */,
@@ -204,6 +207,7 @@
 				150CD89E2C3B1BC8003CD14E /* AppDelegate.swift in Sources */,
 				159FCF1D2C3E2AFD00AB69A2 /* ScrollingAbility.swift in Sources */,
 				15B850312C41C3B2006C5174 /* LightModeVC.swift in Sources */,
+				15B850332C41DF7F006C5174 /* DarkModeVC.swift in Sources */,
 				159FCF0B2C3CA74500AB69A2 /* ColorsVC.swift in Sources */,
 				159FCF1B2C3E2A3400AB69A2 /* ColorBlock.swift in Sources */,
 				15FC9BF62C3F5BE5009DC954 /* ColorSystemText.swift in Sources */,

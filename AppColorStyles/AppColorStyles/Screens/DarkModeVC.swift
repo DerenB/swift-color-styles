@@ -1,14 +1,14 @@
 //
-//  LightModeVC.swift
+//  DarkModeVC.swift
 //  AppColorStyles
 //
-//  Created by Deren Bozer on 07/12/24.
+//  Created by Deren Bozer on 7/12/24.
 //
 //  A View Controller for the Light Mode Screen
 
 import UIKit
 
-class LightModeVC: UIViewController {
+class DarkModeVC: UIViewController {
     
     /// Scroll Items
     /// Used for creating the ability to scroll the page
@@ -59,7 +59,32 @@ class LightModeVC: UIViewController {
     
     /// CGFloat values of the colors
     /// Used to make a UIColor with (r,g,b,a)
-    let c: [CGFloat] = [255, 59, 48, 255, 149, 0, 255, 204, 0, 52, 199, 89, 0, 199, 190, 48, 176, 199, 50, 173, 230, 0, 122, 255, 88, 86, 214, 175, 82, 222, 255, 45, 85, 162, 132, 94, 255, 255, 255, 142, 142, 147, 174, 174, 178, 199, 199, 204, 209, 209, 214, 229, 229, 234, 242, 242, 247]
+    let c: [CGFloat] = [
+        255, 69, 58,
+        255, 159, 10,
+        255, 214, 10,
+        
+        48, 209, 88,
+        99, 230, 226,
+        64, 200, 224,
+        
+        100, 210, 255,
+        10, 132, 255,
+        94, 92, 230,
+        
+        191, 90, 242,
+        255, 55, 95,
+        172, 142, 104,
+        
+        0, 0, 0,
+        
+        142, 142, 147,
+        99, 99, 102,
+        72, 72, 74,
+        58, 58, 60,
+        44, 44, 46,
+        28, 28, 30
+    ]
     
     
     /// RGB Values Function
@@ -77,7 +102,6 @@ class LightModeVC: UIViewController {
     var rgbArray: [UITextField] = []
     
     
-    /// Main
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -85,7 +109,7 @@ class LightModeVC: UIViewController {
         createArraysOfValues()
 
         /// Background Color
-        view.backgroundColor = .white
+        view.backgroundColor = .black
         
         /// Add the ability to scroll the page
         scrollingAbility.addScrolling(viewInput: view, scrollViewInput: scrollView, stackViewInput: stackView)
@@ -207,9 +231,8 @@ class LightModeVC: UIViewController {
             gGreenVal += 3
             gBlueVal += 3
         }
-        
     }
-    
+
     
 } /// Main End
 

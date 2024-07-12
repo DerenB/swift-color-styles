@@ -53,6 +53,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     
+    /// Create Dark Mode VC
+    func createDarkModeVC() -> UINavigationController {
+        /// Create Instance of VC
+        let darkModeVC = DarkModeVC()
+        
+        /// Set Icon string name
+        let iconImage = UIImage(systemName: "paintbrush.fill")
+        
+        /// Set Navigation Title
+        darkModeVC.title = "Light Mode"
+        
+        /// Create the tab bar item
+        /// Tag is the appearance order left to right
+        darkModeVC.tabBarItem = UITabBarItem(title: "Dark Mode", image: iconImage, tag: 1)
+        
+        return UINavigationController(rootViewController: darkModeVC)
+        
+    }
+    
+    
     /// Create Fonts VC
     func createFontsVC() -> UINavigationController {
         /// Create instance of VC
@@ -66,7 +86,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         /// Create the tab bar item
         /// Tag is the appearance order left to right
-        fontsVC.tabBarItem = UITabBarItem(title: "Fonts", image: iconImage, tag: 1)
+        fontsVC.tabBarItem = UITabBarItem(title: "Fonts", image: iconImage, tag: 2)
         
         return UINavigationController(rootViewController: fontsVC)
     }
@@ -85,7 +105,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         UITabBar.appearance().barTintColor = .black
         
         /// Add the Tabs to the Tab Bar
-        tabBar.viewControllers = [createLightModeVC(), createFontsVC()]
+        tabBar.viewControllers = [createLightModeVC(), createDarkModeVC(), createFontsVC()]
         
         return tabBar
     }
