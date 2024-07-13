@@ -23,48 +23,32 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDeleg
         window?.windowScene = windowScene
         
         /// Top Navigation Bar settings
-        // configureNavigationBar()
+        configureNavigationBar()
         
         /// Set the root view controller
         window?.rootViewController = createTabBar()
         
         /// Set Root View Controller
         window?.makeKeyAndVisible()
+        
+        
     }
-    
-    /*
-     
-     let firstViewController = FirstViewController()
-     let firstTabBarItem = UITabBarItem(title: "First", image: UIImage(named: "first_icon"), selectedImage: UIImage(named: "first_icon_selected"))
-     firstTabBarItem.setTitleTextAttributes([.foregroundColor: UIColor.red], for: .selected)
-     firstTabBarItem.setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .normal)
-     firstViewController.tabBarItem = firstTabBarItem
-     
-     */
-    
-    
     
     
     /// Create Light Mode VC
     func createLightModeVC() -> UINavigationController {
-        /// Set Icon string name
-        let iconImage = UIImage(systemName: "paintpalette.fill")
-        
         /// Create Instance of VC
         let lightModeVC = LightModeVC()
+        
+        /// Set Icon string name
+        let iconImage = UIImage(systemName: "paintpalette.fill")
         
         /// Set Navigation Title
         lightModeVC.title = "Light Mode"
         
-        /// Create the tab bar item, tag is the appearance order
-        let firstTabBarItem = UITabBarItem(title: "Light Mode", image: iconImage, tag: 0)
-        
-        /// Customize the Styling
-        firstTabBarItem.setTitleTextAttributes([.foregroundColor: UIColor.red], for: .selected)
-        firstTabBarItem.setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .normal)
-        firstTabBarItem.standardAppearance?.backgroundColor = .black
-
-        lightModeVC.tabBarItem = firstTabBarItem
+        /// Create the tab bar item
+        /// Tag is the appearance order left to right
+        lightModeVC.tabBarItem = UITabBarItem(title: "Light Mode", image: iconImage, tag: 0)
         
         return UINavigationController(rootViewController: lightModeVC)
     }
@@ -116,25 +100,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDeleg
         
         /// Add the Tabs to the Tab Bar
         tabBar.viewControllers = [createLightModeVC(), createDarkModeVC(), createFontsVC()]
-        // tabBar.delegate = self
         
         /// Set the Tab Bar color
-        // UITabBar.appearance().tintColor = .black
+        UITabBar.appearance().tintColor = .white
         
         /// Set Tab Bar to solid black
-        // UITabBar.appearance().isTranslucent = false
-        // UITabBar.appearance().barTintColor = .white
+        UITabBar.appearance().isTranslucent = false
+        UITabBar.appearance().barTintColor = .black
          
         return tabBar
     }
     
     
     /// Customize Navigation Bar
-//    func configureNavigationBar() {
-//        UINavigationBar.appearance().isTranslucent = false
-//        UINavigationBar.appearance().barTintColor = .white
-//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
-//    }
+    func configureNavigationBar() {
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().barTintColor = .black
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
 
 
     
