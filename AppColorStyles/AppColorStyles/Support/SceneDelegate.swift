@@ -63,7 +63,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDeleg
         let iconImage = UIImage(systemName: "paintbrush.fill")
         
         /// Set Navigation Title
-        darkModeVC.title = "Light Mode"
+        darkModeVC.title = "Dark Mode"
         
         /// Create the tab bar item
         /// Tag is the appearance order left to right
@@ -99,7 +99,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate, UITabBarControllerDeleg
         let tabBar = UITabBarController()
         
         /// Add the Tabs to the Tab Bar
-        tabBar.viewControllers = [createLightModeVC(), createDarkModeVC(), createFontsVC()]
+        tabBar.viewControllers = [createLightModeVC(), createDarkModeVC()]
         
         /// Set the Tab Bar color
         UITabBar.appearance().tintColor = .white
