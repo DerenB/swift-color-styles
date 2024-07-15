@@ -17,6 +17,9 @@ class ColorSystemText {
         inTextField.text = title
         inTextField.textColor = .white
         
+        /// Removes the interaction
+        inTextField.isUserInteractionEnabled = false
+        
         NSLayoutConstraint.activate([
             inTextField.widthAnchor.constraint(equalToConstant: 200),
             inTextField.heightAnchor.constraint(equalToConstant: 100),
@@ -32,6 +35,9 @@ class ColorSystemText {
         
         inTextField.text = title
         inTextField.textColor = .black
+        
+        /// Removes the interaction
+        inTextField.isUserInteractionEnabled = false
         
         NSLayoutConstraint.activate([
             inTextField.widthAnchor.constraint(equalToConstant: 200),

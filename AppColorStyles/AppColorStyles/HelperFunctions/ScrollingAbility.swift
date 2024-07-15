@@ -21,9 +21,11 @@ class ScrollingAbility {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             scrollView.leftAnchor.constraint(equalTo: view.leftAnchor),
             scrollView.rightAnchor.constraint(equalTo: view.rightAnchor),
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            // scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: view.frame.size.width * 0.125),
+            // scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -view.frame.size.width * 0.125)
         ])
     }
     
@@ -35,10 +37,12 @@ class ScrollingAbility {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            stackView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
-            stackView.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
+            stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
+            // stackView.leftAnchor.constraint(equalTo: scrollView.leftAnchor),
+            // stackView.rightAnchor.constraint(equalTo: scrollView.rightAnchor),
+            stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: scrollView.frame.size.width * 0.125),
+            stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -scrollView.frame.size.width * 0.125)
         ])
     }
 }

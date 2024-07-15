@@ -17,6 +17,9 @@ class ColorBlock {
         /// Add View to Canvas
         stackView.addArrangedSubview(viewBlock)
         
+        /// Center the View
+        stackView.alignment = .center
+        
         /// Remove auto layout
         viewBlock.translatesAutoresizingMaskIntoConstraints = false
         
@@ -25,10 +28,11 @@ class ColorBlock {
         
         /// Constraints
         NSLayoutConstraint.activate([
-            viewBlock.widthAnchor.constraint(equalTo: stackView.widthAnchor),
-            viewBlock.heightAnchor.constraint(equalToConstant: height),
+            viewBlock.topAnchor.constraint(equalTo: stackView.safeAreaLayoutGuide.topAnchor, constant: heightPin),
             viewBlock.centerXAnchor.constraint(equalTo: stackView.centerXAnchor),
-            viewBlock.topAnchor.constraint(equalTo: stackView.safeAreaLayoutGuide.topAnchor, constant: heightPin)
+            viewBlock.heightAnchor.constraint(equalToConstant: height),
+            // viewBlock.widthAnchor.constraint(equalTo: stackView.widthAnchor),
+            viewBlock.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 0.75)
         ])
     }
 }

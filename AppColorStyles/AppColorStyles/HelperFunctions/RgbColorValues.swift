@@ -19,6 +19,9 @@ class RgbColorValues {
         inputField.text = "R: \(intVal)"
         inputField.textColor = .black
         
+        /// Removes the interaction
+        inputField.isUserInteractionEnabled = false
+        
         NSLayoutConstraint.activate([
             inputField.widthAnchor.constraint(equalToConstant: 65),
             inputField.heightAnchor.constraint(equalToConstant: 100),
@@ -35,6 +38,9 @@ class RgbColorValues {
         inputField.text = "G: \(intVal)"
         inputField.textColor = .black
         
+        /// Removes the interaction
+        inputField.isUserInteractionEnabled = false
+        
         NSLayoutConstraint.activate([
             inputField.widthAnchor.constraint(equalToConstant: 65),
             inputField.heightAnchor.constraint(equalToConstant: 100),
@@ -50,6 +56,9 @@ class RgbColorValues {
         
         inputField.text = "B: \(intVal)"
         inputField.textColor = .black
+        
+        /// Removes the interaction
+        inputField.isUserInteractionEnabled = false
         
         NSLayoutConstraint.activate([
             inputField.widthAnchor.constraint(equalToConstant: 65),
